@@ -22,3 +22,23 @@
 Homestead.json
 Homestead.yaml
 Thumbs.db
+
+# -----------------
+# Doxygen
+# -----------------
+/public/docs/html
+/public/docs/latex
+/public/docs/man
+/public/docs/rtf
+/public/docs/xml
+
+# Arquivos temporários gerados pelo Doxygen
+*.tag
+*.aux
+*.log
+*.out
+*.toc
+*.dox
+*.idx
+*.ilg
+*.blg
