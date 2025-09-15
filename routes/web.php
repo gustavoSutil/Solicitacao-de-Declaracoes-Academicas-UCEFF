@@ -2,8 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/solicitar-documento', function () {
+    return view('solicitar-documento');
 });
 
 Route::get('/docs/{any?}', function () {
