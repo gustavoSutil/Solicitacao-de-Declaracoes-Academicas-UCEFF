@@ -35,12 +35,7 @@ class Solicitacao extends Model
     protected $fillable = [
         'nome_aluno',
         'codigo_de_validacao',
-        'autorizado',
-        'documento_solicitado' // enum dos tipos de documentos
-    ];
-
-    protected $casts = [
-        'autorizado' => 'boolean',
+        'documento_solicitado'
     ];
 
     protected $dates = [
