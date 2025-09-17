@@ -29,9 +29,9 @@
                     <select id="tipo_documento" class="form-select @error('tipo_documento') is-invalid @enderror"
                             wire:model="tipo_documento">
                         <option value="">Selecione o tipo de documento</option>
-                        <option value="declaracao_matricula">Declaração de Matrícula</option>
-                        <option value="certificado_conclusao">Certificado de Conclusão</option>
-                        <option value="atestado_frequencia">Atestado de Frequência</option>
+                        @foreach ($this->getTipoDocumentoEnumProperty() as $identificador => $descricao)
+                            <option value="{{ $identificador }}">{{ $descricao }}</option>
+                        @endforeach
                     </select>
 
                     @error('tipo_documento')

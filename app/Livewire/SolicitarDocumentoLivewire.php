@@ -4,32 +4,19 @@ namespace App\Livewire;
 
 use Livewire\Component;
 use App\Models\Solicitacao;
+use App\Traits\SolicitacaoValidationTrait;
 
-class SolicitarDocumento extends Component
+class SolicitarDocumentoLivewire extends Component
 {
+    use SolicitacaoValidationTrait;
+
     public $nome_aluno;
     public $tipo_documento;
 
-    /**
-     * Regras de validação para os campos do formulário.
-     *
-     * @var array
-     */
-    protected $rules = [
-        'nome_aluno' => 'required|string|min:3|max:255|regex:/^[\pL\s]+$/u',
-        'tipo_documento' => 'required|string|in:declaracao_matricula,certificado_conclusao,historico_academico',
-    ];
-
-    /**
-     * Mensagens de validação personalizadas.
-     *
-     * @var array
-     */
-    protected $messages = [
-        'nome_aluno.required' => 'Por favor, insira o nome do aluno.',
-        'nome_aluno.regex' => 'Formato inválido. Use apenas letras e espaços.',
-        'tipo_documento.required' => 'Por favor, selecione um tipo de documento válido.',
-    ];
+    public function getTipoDocumentoEnumProperty()
+    {
+        return Solicitacao::getDocumentoSolicitadoEnum();
+    }
 
     /**
      * Submete a solicitação de documento.
@@ -37,7 +24,7 @@ class SolicitarDocumento extends Component
      * @return void
      */
     public function solicitar()
-    {   
+    {
         $this->validate();
 
         Solicitacao::create([
@@ -57,6 +44,8 @@ class SolicitarDocumento extends Component
         $this->reset(
             'tipo_documento'
         );
+
+        $this->dispatch('consultarSolicitacoes');
     }
 
     public function render()
