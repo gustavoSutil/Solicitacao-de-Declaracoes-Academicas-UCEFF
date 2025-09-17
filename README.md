@@ -1,6 +1,6 @@
 # Solicitações de Declarações Acadêmicas UCEFF
 
-Este projeto é um sistema para gerenciar solicitações de declarações acadêmicas de alunos da UCEFF, desenvolvido em Laravel com Livewire.
+Este projeto é um sistema de um desafio tecnico onde o objetivo e' gerenciar solicitações de declarações acadêmicas de alunos da UCEFF, desenvolvido em Laravel com Livewire.
 ---
 
 ## Funcionalidades
