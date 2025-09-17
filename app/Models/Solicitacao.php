@@ -13,7 +13,6 @@ use Illuminate\Database\Eloquent\Model;
  * - id: chave primária autoincremental
  * - nome_aluno: nome do aluno solicitante
  * - codigo_de_validacao: código único para validar o documento
- * - autorizado: indica se a solicitação foi autorizada (nulo quando pendente)
  * - created_at / updated_at: timestamps gerenciados automaticamente
  * Atributos adicionais:
  * - documento_solicitado_formatado: retorna o nome legível do documento solicitado
